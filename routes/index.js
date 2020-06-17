@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
   let location = await getGeoCode(address.city)
   console.log(location)
   let weatherData = await getOpenWeather(location.coordinates)
-  res.render('index', { title: 'Weather App' });
+  res.render('index', { title: 'Weather App', weather: weatherData });
 });
 
 module.exports = router;
