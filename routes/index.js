@@ -20,7 +20,7 @@ router.get('/', async function(req, res, next) {
 
   let thisTime = new Date()
   for (let i = 0; i < hourly.length; i++) {
-    hourly[i].displayTime = new Date((hourly[i].dt*1000)).toLocaleString()
+    hourly[i].displayTime = new Date((hourly[i].dt*1000)).toLocaleString("en-US", {dataStyle: "short", timeStyle: "short"})
     // hourly[i].push({displayTime: hourly.displayTime})
   }
   console.log(hourly)
