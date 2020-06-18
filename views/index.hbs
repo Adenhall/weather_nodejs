@@ -16,13 +16,17 @@
 </div>
 
 <h1>Overcast throughout the day</h1>
-{{#each hourly}}
-<ul class="hourly">
+<div class="hourly">
+    {{#each hourly}}
+    <ul class="hourly-style">
 
-    <li>{{displayTime}}</li>
-    <li>{{temp}} C</li>
-    <li>{{weather.description}}</li>
+        <li>{{displayTime}}</li>
+        <li>{{temp}} C</li>
+        <li>
+            <h3>{{weather.0.description}}</h3>
+        </li>
 
-</ul> {{/each}}
+    </ul> {{/each}}
+</div>
+
 {{/if}}
-

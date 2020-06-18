@@ -8,6 +8,9 @@ a {
 }
 
 .hourly {
-  
+  display: flex;
+}
+
+.hourly-style {
   list-style: none;
 }

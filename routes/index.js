@@ -23,7 +23,7 @@ router.get('/', async function(req, res, next) {
     hourly[i].displayTime = new Date((hourly[i].dt*1000)).toLocaleString("en-US", {dataStyle: "short", timeStyle: "short"})
     // hourly[i].push({displayTime: hourly.displayTime})
   }
-  console.log(hourly[0].weather)
+  console.log(hourly[1])
   
   console.log(thisTime.toLocaleString())
   res.render('index', { title: 'Weather App', forecast: weatherData, hourly: hourly});
