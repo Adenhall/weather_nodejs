@@ -5,8 +5,22 @@
 <form action="/" method="GET">
     <input name="city" placeholder="Enter a city name" required>
     <input type="submit" value="Get Forecast">
-  </form>
+</form>
 
-  <ul>
-      <li>{{weather.current.temp}}</li>
-  </ul>
+{{#if forecast}}
+<ul>
+    <li>
+        <p>temp: {{forecast.current.temp}} C</p>
+    </li>
+    <li>
+        <p>description: {{forecast.current.weather.0.description}}</p>
+    </li>
+</ul>
+{{/if}}
+{{#each hourly}}
+<ul class="hourly">
+
+    <li>{{displayTime}}</li>
+    <li>{{temp}} C</li>
+
+</ul> {{/each}}

@@ -10,9 +10,23 @@ router.get('/', async function(req, res, next) {
   let address = req.query
   // console.log(address)
   let location = await getGeoCode(address.city)
-  console.log(location)
+  // console.log(location)
   let weatherData = await getOpenWeather(location.coordinates)
-  res.render('index', { title: 'Weather App', weather: weatherData });
+  let hourly = weatherData.hourly
+
+
+  let displayTime= []
+
+
+  let thisTime = new Date()
+  for (let i = 0; i < hourly.length; i++) {
+    hourly[i].displayTime = new Date((hourly[i].dt*1000)).toLocaleString()
+    // hourly[i].push({displayTime: hourly.displayTime})
+  }
+  console.log(hourly)
+  console.log(displayTime)
+  console.log(thisTime.toLocaleString())
+  res.render('index', { title: 'Weather App', forecast: weatherData, hourly: hourly});
 });
 
 module.exports = router;
