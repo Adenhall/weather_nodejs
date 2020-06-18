@@ -15,11 +15,14 @@
     <p>{{forecast.current.weather.0.description}}</p>
 </div>
 
-{{/if}}
+<h1>Overcast throughout the day</h1>
 {{#each hourly}}
 <ul class="hourly">
 
     <li>{{displayTime}}</li>
     <li>{{temp}} C</li>
+    <li>{{weather.description}}</li>
 
 </ul> {{/each}}
+{{/if}}
+
