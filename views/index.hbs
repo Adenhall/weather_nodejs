@@ -8,15 +8,13 @@
 </form>
 
 {{#if forecast}}
-<h1>Weather at this time</h1>
-<ul>
-    <li>
-        <p>temp: {{forecast.current.temp}} C</p>
-    </li>
-    <li>
-        <p>description: {{forecast.current.weather.0.description}}</p>
-    </li>
-</ul>
+<div>
+    <h1>Current weather is:</h1>
+
+    <h3>Temperature: {{forecast.current.temp}} C</h3>
+    <p>{{forecast.current.weather.0.description}}</p>
+</div>
+
 {{/if}}
 {{#each hourly}}
 <ul class="hourly">
