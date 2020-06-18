@@ -9,8 +9,10 @@ a {
 
 .hourly {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .hourly-style {
+  width: 100px;
   list-style: none;
 }
